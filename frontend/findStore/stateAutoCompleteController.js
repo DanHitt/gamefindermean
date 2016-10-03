@@ -36,17 +36,21 @@ angular.module('GameFinder')
         }
 
         function selectedItemChange(item) {
-            $log.info('Item changed to ' + JSON.stringify(item));
+            $log.info('Item changed to ' + item.display);
             
             $scope.state = item.display;
+            $scope.storeLister= [];
             $scope.showStateFinder = false;
             $scope.findStoreFunc = function () {
                 findStoresFromStateService.getStores($scope.state).then(function(response){
                     console.dir('controller then: '+ response);
-                    $scope.storeList = response;
+                    console.log(findStoresFromStateService.storeList);
+                    $scope.storeList = findStoresFromStateService.storeList;
+                    console.log($scope.storeList);
+                    return response.data
                 })
             }
-            $scope.findStoreFunc();
+            $scope.x = $scope.findStoreFunc();
         }
         //build list of states as map of key-value pairs
         function loadStates() {

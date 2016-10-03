@@ -1,4 +1,4 @@
-<div ng-if="showStateFinder" class="col-md-4 col-sm-12 well">
+<div ng-show="showStateFinder" class="col-md-4 col-sm-12 well">
     <div class="text-center h2">Find A Game Store</div>
     <div layout="column" ng-cloak>
         <md-content class="md-padding">
@@ -14,11 +14,10 @@
     <div class="h6"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Most game stores have a bunch of games that you can play in store at their gaming tables...for FREE. They LOVE when people come in to play. Bring snacks, make a night of it! </div>
 </div>
 
-<div class="well" ng-if="!showStateFinder">
-   dfajfkjads
-    <table class="table table-hover" >
-        <tr ng-repeat="store in storeList">
-            {{store}}
-        </tr>
-    </table>
+<div class="col-md-4" ng-show="!showStateFinder">
+    State: {{state}}
+    <dir ng-repeat="store in storeList">
+        {{store.store}}
+    </dir>
+
 </div>

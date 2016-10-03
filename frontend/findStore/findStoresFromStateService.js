@@ -4,19 +4,20 @@ angular
         console.log('findStores...Service: ');
 
         var that = this;
-        var storeList = [];
-        
+
+
         this.getStores = function (state) {
             return $http.get("http://localhost:8000/stores").then(function (response) {
-                console.log("get stores: "+state);
+                //                console.log("get stores: "+state);
+                //                console.log(response.data[0].address.city);
                 that.state = state;
+                that.storeList = [];
                 for (var i = 0; i < response.data.length; i++) {
                     if (response.data[i].address.state === state) {
-                        storeList.push(response.data[i])
+                        that.storeList.push(response.data[i])
                     }
                 }
-                that.stateStoreList = storeList;
-                return storeList;
+                return that.storeList;
             })
         }
     })
