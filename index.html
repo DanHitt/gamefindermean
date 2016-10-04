@@ -37,6 +37,22 @@
             <div class="text-center h3"> Find games. Find players.</div>
         </div>
         <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <form action="/login" method="post">
+                    <div>
+                        <label> Email: </label>
+                        <input type="text" name="username" />
+                        <br/>
+                    </div>
+                    <div>
+                        <label>Password:  </label>
+                        <input type="text" name="password" />
+                    </div>
+                    <div>
+                        <input type="submit" value"Submit" />
+                    </div>
+                </form>
+            </div>
             <ng-view></ng-view>
 
         </div>

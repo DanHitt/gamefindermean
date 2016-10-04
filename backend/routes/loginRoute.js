@@ -4,8 +4,22 @@ var express = require('express'),
 
 loginRoutes
     .route("/")
-    .get(function (req, res) {
-        res.render('index.ejs');
+    .post(passport.authenticate('local', {
+            successRedirect: '/loginSuccess',
+            failureRedirect: '/loginFailure'
+        }),
+        function (req, res) {
+            res.redirect('/');
+        })
+
+.route('/loginFailure')
+    .get(function (req, res, next) {
+        res.send('Failed to authenticate');
+    })
+
+.route('/loginSuccess')
+    .get(function (req, res, next) {
+        res.send('Successfully authenticated');
     })
 
 .route("/signup")
