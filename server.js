@@ -41,7 +41,7 @@ app.listen(8000, function () {
     console.log("-->port: 8000")
 })
 
-var configDB = require('mongodb://localhost/gameFinder');
+var configDB = require('mongodb://localhost/gamefinder');
 mongoose.connect(configDB, function () {
     console.log("Mongoose is loose!");
 });
