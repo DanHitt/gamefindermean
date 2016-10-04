@@ -23,7 +23,7 @@ var Game = require("./backend/models/gameSchema");
 
 //SERVER VARIABLES
 var app = express();
-mongoose.connect("mongodb://localhost/test", function () {
+mongoose.connect("mongodb://localhost/gamefinder", function () {
     console.log("Mongoose is loose!");
 })
 
