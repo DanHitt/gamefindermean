@@ -3,7 +3,7 @@ angular.module('GameFinder')
         $scope.test = "test";
         $scope.loginFunc = function (email, pwd) {
             loginService.login(email, pwd).then(function (response) {
-
+                $scope.user = loginService.response;
             })
         }
 }])

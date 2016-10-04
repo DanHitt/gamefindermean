@@ -56,7 +56,7 @@ passport.deserializeUser(Account.deserializeUser());
 //ROUTES
 app.use(express.static(path.join(__dirname, "./")));
 //passport*
-app.use('/', routes);
+app.use('/login', routes);
 //endpassport*
 app.use("/stores", storeRoutes);
 
