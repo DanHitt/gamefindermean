@@ -2,6 +2,7 @@ var express = require('express'),
     storeRoutes = express.Router(),
     Store = require("../models/storeSchema");
 
+//from www.com/
 storeRoutes.route("/")
     .get(function (req, res) {
         Store.find({}, function (err, stores) {

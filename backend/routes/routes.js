@@ -1,5 +1,5 @@
 var express = require('express')
-var Account = require('../models/account');
+var Account = require('../models/userSchema');
 var passport = require('passport');
 var router = express.Router()
 
@@ -26,7 +26,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-    res.redirect('/');
+    res.json(req.user)
 });
 
 router.get('/logout', function(req, res) {

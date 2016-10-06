@@ -37,9 +37,40 @@
             <div class="text-center h3"> Find games. Find players.</div>
         </div>
         <div class="row">
-            <div class="col-md-2 panel panel-primary">
+            <div ng-controller="loginController" class="col-md-2 panel panel-primary">
                 <h3 class="text-center panel-heading">Login</h3>
-                <table class="panel-body">
+        
+
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <ng-view></ng-view>
+
+        </div>
+    </div>
+
+
+
+    <!--import scripts below-->
+    <script type="text/javascript" src="frontend/app.js"></script>
+    <script type="text/javascript" src="frontend/findStore/stateAutoCompleteController.js"></script>
+    <script type="text/javascript" src="frontend/login/loginController.js"></script>
+    <script type="text/javascript" src="frontend/gameAutoCompleteController.js"></script>
+    <script type="text/javascript" src="frontend/findStore/findStoreRoute.js"></script>
+    <script type="text/javascript" src="frontend/findStore/findStoresFromStateService.js"></script>
+    <script type="text/javascript" src="frontend/findStore/storesInStateService.js"></script>
+    <script type="text/javascript" src="frontend/login/loginService.js"></script>
+
+</body>
+
+</html>
+
+<!--
+
+
+
+        <table class="panel-body">
                     <tbody>
                         <tr>
                             <td>
@@ -58,33 +89,10 @@
                             </td>
                         </tr>
                         <tr>
-                           <td></td>
+                            <td></td>
                             <td class="text-center">
-                                <button ng-click="loginfunc(user,pwd)" type="submit" class="btn btn-default">Sign in</button>
+                                <button ng-click="loginFunc(user,pwd)" type="submit" class="btn btn-default">Sign in</button>
                             </td>
                         </tr>
                     </tbody>
-                </table>
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <ng-view></ng-view>
-
-        </div>
-    </div>
-
-
-
-    <!--import scripts below-->
-    <script type="text/javascript" src="frontend/app.js"></script>
-    <script type="text/javascript" src="frontend/findStore/stateAutoCompleteController.js"></script>
-    <script type="text/javascript" src="frontend/gameAutoCompleteController.js"></script>
-    <script type="text/javascript" src="frontend/findStore/findStoreRoute.js"></script>
-    <script type="text/javascript" src="frontend/findStore/findStoresFromStateService.js"></script>
-    <script type="text/javascript" src="frontend/findStore/storesInStateService.js"></script>
-
-</body>
-
-</html>
+                </table>-->

@@ -17,6 +17,7 @@ var LocalStrategy = require('passport-local').Strategy;
 //REQUIRE JS MODULES
 var storeRoutes = require("./backend/routes/storeRoute");
 var routes = require("./backend/routes/routes");
+var indexer = require("./backend/routes/indexer.js");
 //REQUIRE SCHEMAS
 var Store = require("./backend/models/storeSchema");
 var Game = require("./backend/models/gameSchema");
@@ -45,10 +46,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //passport config
-var Account = require('./backend/models/account');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+var Account = require('./backend/models/userSchema');
+passport.use(new LocalStrategy(Account.initialize()));
+passport.serializeUser(Account.serializeAccount());
+passport.deserializeUser(Account.deserializeAccount());
 
 //endpassport*
 
@@ -59,6 +60,7 @@ app.use(express.static(path.join(__dirname, "./")));
 app.use('/login', routes);
 //endpassport*
 app.use("/stores", storeRoutes);
+app.use('/', indexer);
 
 //passport*
 app.use(function (req, res, next) {
